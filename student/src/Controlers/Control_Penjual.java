@@ -17,11 +17,14 @@ public class Control_Penjual {
     Button Button8;
     @FXML
     Label label_akun_Penjual;
-    // pindah ke halaman akun penjual
+    private String password_saya;
+    // pindah ke halaman aku
     public void buttonAction8(ActionEvent ex) throws IOException {
         Stage new_stage= new Stage();
         FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Akun_Penjual.fxml"));
         Parent root = loader.load();
+        Control_Akun_penjual CP = loader.getController();
+        CP.Password(password_saya);
         Scene new_scene = new Scene(root);
         new_stage.setScene(new_scene);
         new_stage.show();
@@ -41,4 +44,11 @@ public class Control_Penjual {
     public void isiLabelAkun(String nama){
         label_akun_Penjual.setText("Selamat Datang " + nama + "!");
     }
+
+    public void Password(String Pass) {
+        password_saya = Pass;
+    }
+
 }
+
+

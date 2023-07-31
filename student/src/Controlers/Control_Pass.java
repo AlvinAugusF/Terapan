@@ -23,6 +23,8 @@ public class Control_Pass {
     @FXML
     Label old_pass;
 // belum beres
+
+
     public void buttonAction10(ActionEvent ex) throws IOException {
         Stage new_stage= new Stage();
         FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Akun_Pembeli.fxml"));
@@ -39,8 +41,10 @@ public class Control_Pass {
         Scene new_scene = new Scene(root);
         new_stage.setScene(new_scene);
         new_stage.show();
+        Control_Pass CP = loader.getController();
+        CP.isiLabelPass(passed.getText());
         ((Node) ex.getSource()).getScene().getWindow().hide();
     }
-    public void isiLabelPass(String pass){
-        old_pass.setText("password lama anda =  " + pass);}
+    public void isiLabelPass(String pass) throws IOException {
+        old_pass.setText("password anda =  " + pass);}
 }

@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,10 +20,13 @@ public class Control_Pembeli {
     @FXML
     Label label_akun;
 // pindah ke halaman akun pembeli
+    private String password_saya;
     public void buttonAction3(ActionEvent ex) throws IOException {
         Stage new_stage= new Stage();
         FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Akun_Pembeli.fxml"));
         Parent root = loader.load();
+        Control_Akun_pembeli CP = loader.getController();
+        CP.Password(password_saya);
         Scene new_scene = new Scene(root);
         new_stage.setScene(new_scene);
         new_stage.show();
@@ -43,5 +45,9 @@ public class Control_Pembeli {
     // menampilkan nama masuk
     public void isiLabelAkun(String nama){
         label_akun.setText("Selamat Datang " + nama + "!");
+    }
+
+    public void Password(String Pass) {
+    password_saya = Pass;
     }
 }

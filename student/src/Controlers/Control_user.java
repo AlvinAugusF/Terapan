@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,8 +31,7 @@ public class Control_user {
         new_stage.show();
         Control_Pembeli CP = loader.getController();
         CP.isiLabelAkun(Text1.getText());
-        State pass = loader.getController();
-        pass.setPass(pass1.getText());
+        CP.Password(pass1.getText());
         ((Node) ex.getSource()).getScene().getWindow().hide();
     }
 }

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,6 +18,8 @@ public class Control_User_Penjual {
     Button Button7;
     @FXML
     TextField Text2;
+    @FXML
+    PasswordField pass2;
 
     // mengambil nama dan password serta pindah ke hal pemilik
     public void buttonAction7(ActionEvent ex) throws IOException {
@@ -28,6 +31,7 @@ public class Control_User_Penjual {
         new_stage.show();
         Control_Penjual CP = loader.getController();
         CP.isiLabelAkun(Text2.getText());
+        CP.Password(pass2.getText());
         ((Node) ex.getSource()).getScene().getWindow().hide();
     }
 }

@@ -28,7 +28,7 @@
                   <Insets />
                </VBox.margin>
             </TextField>
-            <PasswordField promptText="Password" />
+            <PasswordField fx:id="pass2" promptText="Password" />
             <Button fx:id="Button7" mnemonicParsing="false" onAction="#buttonAction7" text="OK" />
          </children>
          <BorderPane.margin>

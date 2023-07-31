@@ -7,37 +7,44 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Control_Akun_penjual {
+public class Control_Pass_penjual {
     @FXML
-    Button Button6;
-    private String password_saya;
+    Button cancel;
+    @FXML
+    Button confirm;
+    @FXML
+    TextField passed;
+    @FXML
+    Label old_pass;
+// belum beres
 
-// belum digunakan
-    public void password(ActionEvent ex) throws IOException {
+
+    public void buttonAction10(ActionEvent ex) throws IOException {
         Stage new_stage= new Stage();
-        FXMLLoader loader = new FXMLLoader(main.student.class.getResource("password_penjual.fxml"));
+        FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Akun_Penjual.fxml"));
         Parent root = loader.load();
         Scene new_scene = new Scene(root);
+        new_stage.setScene(new_scene);
+        new_stage.show();
+        ((Node) ex.getSource()).getScene().getWindow().hide();
+    }
+    public void buttonAction11(ActionEvent ex) throws IOException {
+        Stage new_stage= new Stage();
+        FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Password_penjual.fxml"));
+        Parent root = loader.load();
+        Scene new_scene = new Scene(root);
+        new_stage.setScene(new_scene);
+        new_stage.show();
         Control_Pass_penjual CP = loader.getController();
-        CP.isiLabelPass(password_saya);
-        new_stage.setScene(new_scene);
-        new_stage.show();
+        CP.isiLabelPass(passed.getText());
         ((Node) ex.getSource()).getScene().getWindow().hide();
     }
-    public void logOut(ActionEvent ex) throws IOException {
-        Stage new_stage= new Stage();
-        FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Login awal.fxml"));
-        Parent root = loader.load();
-        Scene new_scene = new Scene(root);
-        new_stage.setScene(new_scene);
-        new_stage.show();
-        ((Node) ex.getSource()).getScene().getWindow().hide();
-    }
-    public void Password(String Pass) {
-        password_saya = Pass;
-    }
+    public void isiLabelPass(String pass) throws IOException {
+        old_pass.setText("password anda =  " + pass);}
 }

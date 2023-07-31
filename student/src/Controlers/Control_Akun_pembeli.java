@@ -16,7 +16,7 @@ public class Control_Akun_pembeli {
     Button Button6;
     @FXML
     Button Button12;
-
+    private String password_saya;
 // Pindah Ke Login
     public void buttonAction5(ActionEvent ex) throws IOException {
         Stage new_stage= new Stage();
@@ -32,9 +32,14 @@ public class Control_Akun_pembeli {
         Stage new_stage= new Stage();
         FXMLLoader loader = new FXMLLoader(main.student.class.getResource("Password.fxml"));
         Parent root = loader.load();
+        Control_Pass CP = loader.getController();
+        CP.isiLabelPass(password_saya);
         Scene new_scene = new Scene(root);
         new_stage.setScene(new_scene);
         new_stage.show();
         ((Node) ex.getSource()).getScene().getWindow().hide();
+    }
+    public void Password(String Pass) {
+        password_saya = Pass;
     }
 }
